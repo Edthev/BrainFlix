@@ -1,0 +1,103 @@
+// ! Mixins
+// * Colors
+// BrainFlix-Black is 1st(primary) text color
+$BrainFlix-Black:#323232;
+// video player components
+$BrainFlix-DarkBlack:#000;
+// call to action color
+$BrainFlix-Blue: #0095FF;
+// call to action hover color
+$BrainFlix-DarkBlue: #0065AD;
+// Silver is 2nd text color
+$Silver: #AFAFAF;
+//TODO White is call to action font color
+// divider line color
+$Mercury: #e1e1e1;
+// Form Field background color
+$Alabaster:#FAFAFA;
+// * Fonts
+// ? Font Sizes
+@mixin PageHeader-Mobile{
+    font-size: 24px;
+    line-height: 32px;
+    text-weight:700;
+}
+@mixin SectionHeader-Mobile{
+    font-size: 12px;
+    line-height: 20px;
+    text-weight:700;
+}
+@mixin Subheader-Mobile{
+    font-size: 13px;
+    line-height: 18px;
+    text-weight:700;
+}
+@mixin Body-Mobile{
+    font-size: 13px;
+    line-height: 18px;
+    text-weight:400;
+}
+@mixin Form-Mobile{
+    font-size: 10px;
+    line-height: 20px;
+    text-weight:700;
+}
+@mixin PageHeader-Desktop{
+    font-size: 24px;
+    line-height: 32px;
+    text-weight:700;
+}
+@mixin SectionHeader-Desktop{
+    font-size: 12px;
+    line-height: 20px;
+    text-weight:700;
+}
+@mixin Subheader-Desktop{
+    font-size: 13px;
+    line-height: 18px;
+    text-weight:700;
+}
+@mixin Body-Desktop{
+    font-size: 13px;
+    line-height: 18px;
+    text-weight:400;
+}
+@mixin Form-Desktop{
+    font-size: 10px;
+    line-height: 20px;
+    text-weight:700;
+}
+// ? Font typeface
+@font-face{
+    font-family: 'AvenirRegular';
+    src: url('../assets/Font/AvenirNextLTPro-Regular.otf');
+    font-weight: 400;
+    // font-style:
+}
+@mixin regularFont{
+    font-family: 'AvenirRegular';
+}
+
+@font-face{
+    font-family: 'AvenirDemi';
+    src: url('../assets/Font/AvenirNextLTPro-Demi.otf');
+    font-weight:600;
+    // font-style:
+}
+@mixin demiFont{
+    font-family: 'AvenirDemi';
+}
+
+@font-face{
+    font-family: 'AvenirBold';
+    src: url('../assets/Font/AvenirNextLTPro-Bold.otf');
+    font-weight:700;
+    // font-style:
+}
+@mixin boldFont{
+    font-family: 'AvenirBold';
+    color:red;
+}
+
+
+// ! bottom of mixins

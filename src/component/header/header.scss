@@ -1,100 +1,25 @@
-// TODO delete this:
-img{
-    max-height: 100px;
+@import "../global.scss";
+//TODO fix default font
+*{
+    @include regularFont;
 }
-$test : #FAF;
-.test{
-    background-color: $test;
-    border: 5px solid yellowgreen;
-}
-// bottom of delete
-
-// ! Mixins
-// * Colors
-// BrainFlix-Black is 1st(primary) text color
-$BrainFlix-Black:#323232;
-// video player components
-$BrainFlix-DarkBlack:#000;
-// call to action color
-$BrainFlix-Blue: #0095FF;
-// call to action hover color
-$BrainFlix-DarkBlue: #0065AD;
-// Silver is 2nd text color
-//TODO White is call to action font color
-$Silver: #AFAFAF;
-// divider line color
-$Mercury: #e1e1e1;
-// Form Field background color
-$Alabaster:#FAFAFA;
-// * Fonts
-// ? Font Sizes
-@mixin PageHeader-Mobile{
-    font-size: 24px;
-    line-height: 32px;
-    text-weight:700;
-}
-@mixin SectionHeader-Mobile{
-    font-size: 12px;
-    line-height: 20px;
-    text-weight:700;
-}
-@mixin Subheader-Mobile{
-    font-size: 13px;
-    line-height: 18px;
-    text-weight:700;
-}
-@mixin Body-Mobile{
-    font-size: 13px;
-    line-height: 18px;
-    text-weight:400;
-}
-@mixin Form-Mobile{
-    font-size: 10px;
-    line-height: 20px;
-    text-weight:700;
-}
-@mixin PageHeader-Desktop{
-    font-size: 24px;
-    line-height: 32px;
-    text-weight:700;
-}
-@mixin SectionHeader-Desktop{
-    font-size: 12px;
-    line-height: 20px;
-    text-weight:700;
-}
-@mixin Subheader-Desktop{
-    font-size: 13px;
-    line-height: 18px;
-    text-weight:700;
-}
-@mixin Body-Desktop{
-    font-size: 13px;
-    line-height: 18px;
-    text-weight:400;
-}
-@mixin Form-Desktop{
-    font-size: 10px;
-    line-height: 20px;
-    text-weight:700;
-}
-// ? Font typeface
-
-
-// ! bottom of mixins
-
 #mobile{
     display: flex;
     flex-direction: row;
 }
 
 .header{
+    background-color: white;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
     // for all children
     > div{
-        border: 1px solid black;
         justify-content: center;
         // TODO delete this margin
-        margin:1rem 0;
+        margin: 0 16px;
+        // for some reason this only effects the search bar & logo
+        justify-content:space-between;
     }
     display: flex;
     flex-direction: column;
@@ -102,47 +27,68 @@ $Alabaster:#FAFAFA;
     &__logoImage{
         padding: 16px;
         >img{
-
-            height:16px
+            height:25px
         }
-        
     }
     &__searchBar{
+        //somehow only effects search bar border
+        flex-grow: 1;
+        >form{
+            border: 2px $Mercury solid;
+        }
         .searchBar__form{
+            flex-grow: 1;
+            border-radius: 5%;
+            >input{
+                border-radius: 5%;
+                // padding:1rem;
+                height:26px;
+                width: auto;
+                @include regularFont;
+                background-color: $Alabaster;
+                // border: 1 $Mercury solid;
+                border: 0 solid;
+            }
+            ::placeholder{
+                color: $BrainFlix-Black;
+            }
+            // magnifying glass image
             >img{
                 // TODO fix search bar icon AFTER placement of elements and correct sizing
                 padding:5px;
                 position: absolute;
-                height: 12px;
+                height: 20px;
             }
-
         }
     }
     &__userImage{
+        // pfp image
         > img{
             object-fit: cover;
             height: 32px;
             width: 32px;
             border-radius: 50%;
-            // padding-left: 15px;
         }
     }
     &__upload{
         .uploadForm{
+            // upload image
             >img{
                 // TODO delete
-                background-color: red;
+                position: absolute;
+                margin:4px;
             }
             &__button{
-                background-color: aquamarine;
+                border: 0;
+                border-radius: 3%;
+                height: 32px;
+                width: 100%;
+                @include demiFont;
+                background-color: $BrainFlix-Blue;
+                color:white;
+                margin-bottom: 16px;
             }
         }
+    }
+}
 
-    }
-    //for mobile: searchBar and pfp are on same line
-    &__userImage,&__searchBar{
-    }
-}
-.header:nth-child(1),.header:nth-child(2){
-    // flex-direction: row;
-}

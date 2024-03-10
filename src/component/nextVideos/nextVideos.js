@@ -16,20 +16,20 @@ let nextVideos = () => {
   };
   return (
     <div>
-      <div
-        class="selectedVideo"
+      {/* <div
+        className="selectedVideo"
         onClick={() => {
           handleClick();
         }}
       >
         {Video[0]}
       </div>
-      <div class="video2" onClick={() => handleClick()}>
+      <div className="video2" onClick={() => handleClick()}>
         {videoData[1].title}
       </div>
-      <div class="video2" onClick={() => handleClick()}>
+      <div className="video2" onClick={() => handleClick()}>
         {videoData[2].title}
-      </div>
+      </div> */}
     </div>
   );
 };

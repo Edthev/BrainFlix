@@ -1,36 +1,34 @@
 import "./header.scss";
-import logo from "../../assets/Logo/BrainFlix-logo.svg";
-import searchIcon from "../../assets/Icons/search.svg";
-import pfp from "../../assets/Images/Mohan-muruge.jpg";
-import upload from "../../assets/Icons/upload.svg";
-import test from "../../assets/Icons/upload.svg";
+import Logo from "../../assets/Logo/BrainFlix-logo.svg";
+import SearchIcon from "../../assets/Icons/search.svg";
+import Pfp from "../../assets/Images/Mohan-muruge.jpg";
+import Upload from "../../assets/Icons/upload.svg";
 
 function Header() {
   return (
-    <header class="header">
-      <div class="header__logoImage">
-        <img src={logo} />
+    <header className="header">
+      <div className="header__logoImage">
+        <img src={Logo} />
       </div>
       <div id="mobile">
-        <div class="header__searchBar">
-          <form class="searchBar__form">
-            <img src={searchIcon} />
-            <input class="form__input" placeholder="     Search"></input>
+        <div className="header__searchBar">
+          <form className="searchBar__form">
+            <img src={SearchIcon} />
+            <input className="form__input" placeholder="        Search"></input>
           </form>
         </div>
-        <div class="header__userImage">
-          <img src={pfp} />
+        <div>
+          <div className="header__userImage">
+            <img src={Pfp} />
+          </div>
         </div>
       </div>
-      <div class="header__upload">
-        <form class="uploadForm">
-          <img class="uploadForm__img" src={upload} />
-          <button class="uploadForm__button" onClick="">
-            Upload
-          </button>
+      <div className="header__upload">
+        <form className="uploadForm">
+          <img className="uploadForm__img" src={Upload} />
+          <button className="uploadForm__button">Upload</button>
         </form>
       </div>
-      <img src={test} class="test" />
     </header>
   );
 }
