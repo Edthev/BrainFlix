@@ -7,7 +7,7 @@ import nextVideos from "./component/nextVideos/nextVideos";
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <MainVideo />
       {/* <VideoMetadata /> */}
       {/* <Comments /> */}

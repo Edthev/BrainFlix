@@ -1,23 +1,29 @@
+import React, { useState } from "react";
 import "./mainVideo.scss";
-import CloseFullscreen from "../../assets/Icons/close_fullscreen.svg";
-import Fullscreen from "../../assets/Icons/fullscreen.svg";
-import Pause from "../../assets/Icons/pause.svg";
-import Scrub from "../../assets/Icons/scrub.svg";
-import Play from "../../assets/Icons/play.svg";
-import VolumeOff from "../../assets/Icons/volume_off.svg";
-import VolumeUp from "../../assets/Icons/volume_up.svg";
+import VideosList from "./nextVideos";
+import FeaturedVideo from "./featuredVideo";
+import Pfp from "../../assets/Images/Mohan-muruge.jpg";
+
 let videoData = require("../../assets/Data/video-details.json");
-let videoMetadata = require("../../assets/Data/videos.json");
+let videoListJSON = require("../../assets/Data/videos.json");
 
 // TODO add search functionality
-let video = () => {
-  let Video = 0;
-  let Title = videoData[Video].title;
-  let Creator = videoData[Video].channel;
-  let Image = videoData[Video].image;
-  console.log(Image);
+let Video = () => {
+  const [featuredVideo, setFeaturedVideo] = useState(videoData[0]);
+  const filteredVideos = videoData.filter(
+    (video) => video.id !== featuredVideo.id
+  );
+  const handleVideoClick = (selectedVideo) => {
+    console.log(selectedVideo);
+    const videoDetails = videoData.find(
+      (video) => video.id === selectedVideo.id
+    );
+    setFeaturedVideo(videoDetails);
+    console.log(filteredVideos);
+  };
   return (
     <div className="video">
+      {/* spacing for header */}
       <div className="empty">t1</div>
       <div className="empty">t2</div>
       <div className="empty">t3</div>
@@ -25,17 +31,18 @@ let video = () => {
       <div className="empty">t5</div>
       <div className="empty">t6</div>
       <div className="empty">t7</div>
-      <div className="videoOverlay">
-        <img className="videoIcons CloseFullscreen" src={CloseFullscreen} />
-        <img className="videoIcons Fullscreen" src={Fullscreen} />
-        <img className="videoIcons Pause" src={Pause} />
-        <img className="videoIcons Play" src={Play} />
-        <img className="videoIcons Scrub" src={Scrub} />
-        <img className="video__mainImage Image" src={Image} />
-        <img className="video__mainImage VolumeOff" src={VolumeOff} />
-        <img className="video__mainImage VolumeUp" src={VolumeUp} />
+      <div className="video__mainVideo">
+        {/* main video image */}
+        <FeaturedVideo video={featuredVideo} />
+      </div>
+      <div className="nextVideos">
+        <VideosList
+          videos={filteredVideos}
+          handleVideoClick={handleVideoClick}
+          video={featuredVideo}
+        />
       </div>
     </div>
   );
 };
-export default video;
+export default Video;

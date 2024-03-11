@@ -3,14 +3,20 @@
 *{
     @include regularFont;
 }
-#mobile{
-    display: flex;
-    flex-direction: row;
-}
+
+    #mobile{
+        display: flex;
+        flex-direction: row;
+    }
+
 
 .header{
+    @media screen and (min-width:767px){
+    flex-direction: row;
+    justify-content:space-between;
+    }
     background-color: white;
-    z-index: 1;
+    z-index: 99;
     position: fixed;
     width: 100%;
     // for all children
@@ -31,6 +37,10 @@
         }
     }
     &__searchBar{
+        @media screen and (min-width:768px){
+            margin:12px;
+            width:30vw;
+        }
         //somehow only effects search bar border
         flex-grow: 1;
         >form{
@@ -62,6 +72,9 @@
         }
     }
     &__userImage{
+        @media screen and (min-width:768px){
+            margin:12px
+        }
         // pfp image
         > img{
             object-fit: cover;
@@ -77,6 +90,9 @@
                 // TODO delete
                 position: absolute;
                 margin:4px;
+                @media screen and (min-width:768px){
+                    margin:15px
+                }
             }
             &__button{
                 border: 0;
@@ -87,8 +103,16 @@
                 background-color: $BrainFlix-Blue;
                 color:white;
                 margin-bottom: 16px;
+                @media screen and (min-width:768px){
+                    width:180px;
+            margin:12px
+                    
+                }
             }
         }
     }
 }
 
+button:hover{
+    background-color: $BrainFlix-DarkBlue;
+}
