@@ -3,12 +3,15 @@ import Logo from "../../assets/Logo/BrainFlix-logo.svg";
 import SearchIcon from "../../assets/Icons/search.svg";
 import Pfp from "../../assets/Images/Mohan-muruge.jpg";
 import Upload from "../../assets/Icons/upload.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header">
       <div className="header__logoImage">
-        <img src={Logo} />
+        <Link to="/">
+          <img src={Logo} />
+        </Link>
       </div>
       <div id="mobile">
         <div className="header__searchBar">
@@ -26,7 +29,9 @@ function Header() {
       <div className="header__upload">
         <form className="uploadForm">
           <img className="uploadForm__img" src={Upload} />
-          <button className="uploadForm__button">Upload</button>
+          <Link to="/upload">
+            <button className="uploadForm__button">Upload</button>
+          </Link>
         </form>
       </div>
     </header>

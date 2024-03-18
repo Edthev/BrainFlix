@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/BrainFlix-Package-Sprint-1
 # testing
 /coverage
 

@@ -89,7 +89,7 @@
             >img{
                 // TODO delete
                 position: absolute;
-                margin:4px;
+                margin:20px 4px;
                 @media screen and (min-width:768px){
                     margin:15px
                 }
@@ -103,10 +103,10 @@
                 background-color: $BrainFlix-Blue;
                 color:white;
                 margin-bottom: 16px;
+                margin: 1rem 0;
                 @media screen and (min-width:768px){
                     width:180px;
-            margin:12px
-                    
+                    margin:12px
                 }
             }
         }

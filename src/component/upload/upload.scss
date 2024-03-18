@@ -1,0 +1,138 @@
+@import "../global.scss";
+
+.uploadPage{
+    .hiddenMobile{
+        margin-top:2rem ;
+        @media screen and (max-width:766px){
+            margin: 0;
+            color:white;
+            background-color: white;
+            border-color: white;
+        }
+    }
+    .border{
+        width:100%;
+        margin-left: 0;
+    }
+    margin: 0 1rem;
+    &__form{
+        .form{
+
+            &__imageDiv{
+                >img{
+                    width:100%;
+                    @media screen and (min-width:767px){
+                    width: 35%;
+                    }
+                }
+            }
+            &__title{
+                @include boldFont;
+                @media screen and (min-width:767px){
+                    @include PageHeader-Desktop
+                }
+                @media screen and (max-width:766px){
+                    @include PageHeader-Mobile
+                }
+            }
+            &__subtitle{
+                color: $Silver;
+                @include demiFont;
+                    @include Subheader-Desktop;
+                @media screen and (max-width:766px){
+                    @include Subheader-Mobile
+                }
+            }
+            &__inputs{
+                display: flex;
+                flex-direction: column;
+                .inputTitle, .inputDescription{
+                    margin-top: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    >label{
+                        margin-bottom: .3rem;
+                        color: $Silver;
+                        @include Subheader-Desktop;
+                        @media screen and (max-width:766px){
+                            @include Subheader-Mobile;
+                            @include demiFont;
+                        }
+                    }
+                    >input{
+                        border:$Mercury 1px solid;
+                        padding:1rem;
+                        background-color: $Alabaster;
+                        ::placeholder{
+                            color: $BrainFlix-Black;
+                        }
+                    }
+                }
+                .inputDescription{
+                    input{
+                        padding-bottom: 3rem;
+                    }
+                }
+            }
+            &__button{
+                // margin: 1rem 0;
+                padding: 1rem;
+                border: 0;
+                border-radius: 3%;
+                width: 100%;
+                @include demiFont;
+                background-color: $BrainFlix-Blue;
+                color:white;
+                margin-bottom: 16px;
+            }
+            &__cancelButton{
+                @include demiFont;
+                margin-bottom: 1rem;
+                padding: 1rem;
+                border: 0;
+                color: $BrainFlix-Blue;
+                background-color: white;
+                width: 100%;
+                @media screen and (min-width:767px){
+                    margin-top: 1.5rem;
+                    margin-right: 4rem;
+                }
+
+            }
+        }
+    }
+    .Buttons{
+        @media screen and (min-width:767px){
+            display: flex;
+            flex-direction: row-reverse;
+            button{
+                padding: 1rem 4rem;
+            }
+        }
+    }
+    .right{
+        @media screen and (min-width:1280px){
+            >div{
+                margin:1rem;
+                width:35%;
+                .form__imageDiv{
+                    >img{
+                        width:100%;
+                    }
+
+            }
+            #description, #title{
+                width: calc(100vw - 45vw);
+            }
+            #description{
+                border:red solid 1px;
+                height: 100px;
+            }
+            }
+            display: flex;
+            flex-direction: row;
+            // justify-content: flex-end;
+
+        }
+    }
+}
